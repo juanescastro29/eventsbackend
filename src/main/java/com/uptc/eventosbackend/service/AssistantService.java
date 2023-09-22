@@ -16,10 +16,6 @@ public class AssistantService {
     @Autowired
     private AssistantRepository assistantRepository;
 
-    public Assistant createAssistant(Assistant assistant) {
-        return assistantRepository.save(assistant);
-    }
-
     public List<Activity> activitiesEvent(int eventId, int assistantId) {
         Assistant assistant = assistantRepository.findById(assistantId).get();
         List<Activity> activities = new ArrayList<>();

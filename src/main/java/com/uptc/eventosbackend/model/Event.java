@@ -32,6 +32,7 @@ public class Event {
             name = "event_assistants",
             joinColumns = @JoinColumn(name = "eventId"),
             inverseJoinColumns = @JoinColumn(name = "assistantId"))
+    @JsonIgnore
     private List<Assistant> assistants;
 
     public Event() {

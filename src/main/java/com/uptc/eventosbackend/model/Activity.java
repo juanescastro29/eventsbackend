@@ -1,5 +1,6 @@
 package com.uptc.eventosbackend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class Activity {
     private int activityId;
 
     @Column(name = "activityType")
-    private int activityType;
+    private String activityType;
 
     @ManyToOne
     @JoinColumn(name = "eventId", referencedColumnName = "eventId", nullable = false)
@@ -25,6 +26,7 @@ public class Activity {
             name = "activity_assistants",
             joinColumns = @JoinColumn(name = "activityId"),
             inverseJoinColumns = @JoinColumn(name = "assistantId"))
+    @JsonIgnore
     private List<Assistant> assistants;
 
     public Activity() {
@@ -38,11 +40,11 @@ public class Activity {
         this.activityId = activityId;
     }
 
-    public int getActivityType() {
+    public String getActivityType() {
         return activityType;
     }
 
-    public void setActivityType(int activityType) {
+    public void setActivityType(String activityType) {
         this.activityType = activityType;
     }
 
