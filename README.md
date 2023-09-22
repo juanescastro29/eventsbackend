@@ -13,7 +13,7 @@ participante** -> Metodo get - http://localhost:8080/assistants/eventId/assistan
 ## Diagramas UML
 ### Diagrama de clases
 
-![UML](diagramaClases.png)
+![UML](diagramaclases.png)
 
 
 ## Autores
